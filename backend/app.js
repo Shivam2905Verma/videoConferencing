@@ -29,6 +29,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+// Health check route for Render
+app.get("/healthz", (req, res) => {
+  res.status(200).send("OK");
+});
 
 const start = async () => {
   const connectionDB = await mongoose.connect(process.env.MONGODB_DATABASE);
@@ -36,10 +40,6 @@ const start = async () => {
   server.listen(actualPort, () => {
     console.log(`Server is running on port ${actualPort}`);
   });
-// Health check route for Render
-app.get("/healthz", (req, res) => {
-  res.status(200).send("OK");
-});
 };
 
 start();
