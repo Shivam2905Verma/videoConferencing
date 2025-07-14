@@ -14,7 +14,10 @@ const io = connectToSocket(server);
 const port = 3000;
 
 app.set("port", process.env.PORT || port);
-app.use(cors());
+app.use(cors({
+  origin: '*', // or your frontend domain
+  methods: ['GET', 'POST', 'OPTIONS'],
+}));
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 app.use("/api/v1/user", userRoute);
