@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import "../signup.css";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const { signupHandler, router } = useContext(AuthContext);
