@@ -1,0 +1,263 @@
+.BigContainer {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #212225;
+}
+
+.meetVideoConatiner {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.allPersons {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.videoCall {
+  height: 25rem;
+  width: 25rem;
+  background: linear-gradient(0.4turn, #405751, #2f3232);
+}
+
+.allOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  height: 10vh;
+  width: 100%;
+}
+
+.icon {
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #303234;
+  cursor: pointer;
+}
+
+.chatIcon {
+  position: relative;
+}
+
+.badgeOfChat {
+  position: absolute;
+  color: black;
+  text-align: center;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #8be1c6;
+  z-index: 3;
+  top: -15px;
+  right: 0px;
+  font-size: 20px;
+}
+
+.endMeeting {
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 540;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  color: white;
+  background-color: red;
+}
+.chatBox {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  position: absolute;
+  height: 100vh;
+  width: 35vw;
+  right: -50%;
+  z-index: 10;
+  transition: all ease 0.2s;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  background: linear-gradient(0.4turn, #405751, #2f3232);
+}
+
+.chatContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.chatTitle {
+  font-size: 25px;
+  color: white;
+}
+
+.chatInputAndSend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#chatInput {
+  width: 100%;
+  background: transparent;
+  font-size: 20px;
+  padding: 0.7rem;
+  outline: none;
+  border: 1.5px solid #8bb3a6;
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.chatSendBtn {
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+  background-color: skyblue;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.messageDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 88vh;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+.particularMessageContainer {
+  background-color: #212225;
+  width: auto;
+  padding: 0.7rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+}
+
+@media (max-width: 767px) {
+
+  .allPersons{
+    width: 100%;
+  }
+
+  .videoCall {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .icon {
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .endMeeting {
+  font-size: 0.9rem;
+  font-weight: 540;
+  padding: 0.6rem 0.9rem;
+  border-radius: 1rem;
+  color: white;
+  background-color: red;
+}
+}
+
+/* Lobby */
+
+.lobbyContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.lobbyContainer_left {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 3rem;
+}
+.textLobby {
+  width: 20vw;
+}
+
+.usernameInput {
+  width: 20rem;
+  font-size: 1.5rem;
+  color: white;
+  background-color: transparent;
+  padding: 0.7rem;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 1rem;
+}
+
+.usernameAndConnect {
+  display: flex;
+  gap: 1rem;
+}
+
+.usernameAndConnect button {
+  cursor: pointer;
+  background-color: #002e33;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+  border: none;
+}
+
+.lobbyVideo {
+  background: linear-gradient(0.4turn, #405751, #2f3232);
+}
+@media (max-width: 767px) {
+  .lobbyContainer {
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .textLobby {
+    font-size: 1.6rem;
+    width: 90vw;
+  }
+
+  .usernameInput {
+    width: 15rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .usernameAndConnect button {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+  }
+
+  .lobbyVideo {
+    width: 20rem;
+    background: linear-gradient(0.4turn, #405751, #2f3232);
+  }
+}

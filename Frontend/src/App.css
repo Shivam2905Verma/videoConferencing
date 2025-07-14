@@ -1,0 +1,251 @@
+/* Landing page */
+
+.landingPageContainer {
+  max-width: 100vw;
+  height: 100vh;
+  background-color: black;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  padding: 1.4rem;
+  border-radius: 10rem;
+  background: radial-gradient(circle at top left, black, transparent 50%),
+    radial-gradient(circle at top right, black, transparent 50%), #00292d;
+}
+
+.navBar_right {
+  cursor: pointer;
+  justify-items: center;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.loginbtn {
+  color: black;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+}
+
+.title {
+  font-family: "Ubuntu";
+  color: white;
+}
+
+.landingPageContent {
+  display: flex;
+  height: 79vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingPageContent_left {
+  flex: 1;
+  color: white;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+}
+.landingPageContent_left > :nth-child(1) {
+  font-size: 1.2rem;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.landingPageContent_left > :nth-child(2) {
+  display: flex;
+  gap: 2rem;
+  font-size: 6rem;
+}
+.landingPageContent_left > :nth-child(3) {
+  font-size: 6rem;
+}
+.landingPageContent_left > :nth-child(4) {
+  gap: 2rem;
+  width: 70%;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.highlightWord {
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  background-color: #002e33;
+}
+
+.landingPageContent_right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.getStartBtn {
+  cursor: pointer;
+  margin-top: 1rem;
+  color: black;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 10rem;
+  text-align: center;
+  background-color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 10rem;
+}
+
+.menuBar {
+  display: none;
+}
+
+.logOut {
+  background-color: red;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10rem;
+}
+
+/* Home page css*/
+.homePageContent_left {
+  flex: 1;
+  color: white;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.homePageContent_left > :nth-child(1) {
+  display: flex;
+  gap: 2rem;
+  font-size: 6rem;
+}
+.homePageContent_left > :nth-child(2) {
+  font-size: 1.2rem;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homePageContent_left input {
+  width: 30rem;
+  font-size: 1.5rem;
+  color: white;
+  background-color: transparent;
+  padding: 0.7rem;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 1rem;
+}
+
+.meetingCodeJoin {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.meetingCodeJoin p {
+  cursor: pointer;
+  background-color: #002e33;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 1rem;
+}
+
+.homePageContent_right {
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .landingPageContainer {
+    min-height: 100vh;
+    gap: 0rem;
+  }
+
+  .menuBar {
+    display: block;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .navBar_right {
+    display: none;
+  }
+
+  .landingPageContent {
+    flex-direction: column-reverse;
+  }
+
+  .landingPageContent_left {
+    gap: 0.5rem;
+  }
+
+  .landingPageContent_right img {
+    width: 100%;
+  }
+  .landingPageContent_left > :nth-child(1) {
+    font-size: 0.8rem;
+  }
+
+  .landingPageContent_left > :nth-child(2) {
+    font-size: 3rem;
+    gap: 0.5rem;
+  }
+
+  .landingPageContent_left > :nth-child(3) {
+    font-size: 3rem;
+  }
+
+  .landingPageContent_left > :nth-child(4) {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  /* Home page*/
+
+  .homePageContent_left {
+    align-items: center;
+  }
+  .homePageContent_right img {
+    width: 100%;
+  }
+  .homePageContent_left > :nth-child(1) {
+    font-size: 3rem;
+    width: 22rem;
+    gap: 0.5rem;
+  }
+  .homePageContent_left > :nth-child(2) {
+    font-size: 0.8rem;
+  }
+
+  .meetingCodeJoin input {
+    width: 17rem;
+    font-size: 1rem;
+  }
+
+  .meetingCodeJoin p {
+    padding: 0.7rem 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .homePageContent_right {
+    justify-content: center;
+    align-items: center;
+  }
+}
