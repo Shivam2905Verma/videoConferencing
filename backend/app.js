@@ -15,7 +15,7 @@ const port = 3000;
 
 app.set("port", process.env.PORT || port);
 app.use(cors({
-  origin: 'https://video-conferencing-frontend.vercel.app',
+  origin: 'https://videoconferencing-frontend.onrender.com',
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
