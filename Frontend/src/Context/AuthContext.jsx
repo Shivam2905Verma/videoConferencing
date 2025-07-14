@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const AuthContext = React.createContext({});
 const client = axios.create({
-  baseURL: "http://localhost:3000/api/v1/user",
+  baseURL: "https://video-conferencing-191z-14vv46puq-shivams-projects-58d8c9fe.vercel.app/api/v1/user",
 });
 
 export const AuthProvider = ({ children }) => {

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import "../videoMeet.css";
 
-const server_url = "http://localhost:3000";
+const server_url = "https://video-conferencing-191z-14vv46puq-shivams-projects-58d8c9fe.vercel.app";
 
 var connections = {};
 const peerConfigConnections = {
