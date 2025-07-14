@@ -17,7 +17,6 @@ function LandingPage() {
         <div className="navBar">
           <h1 className="title">me_eting.</h1>
           <div className="navBar_right">
-            <h4>Join as Guest</h4>
             <h4>
               <Link
                 to={"/signup"}
