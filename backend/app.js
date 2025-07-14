@@ -32,9 +32,14 @@ app.get("/", (req, res) => {
 
 const start = async () => {
   const connectionDB = await mongoose.connect(process.env.MONGODB_DATABASE);
-  server.listen(app.get("port"), () => {
-    console.log(`Server is running on http://localhost:${port}`);
+  const actualPort = app.get("port");
+  server.listen(actualPort, () => {
+    console.log(`Server is running on port ${actualPort}`);
   });
+// Health check route for Render
+app.get("/healthz", (req, res) => {
+  res.status(200).send("OK");
+});
 };
 
 start();
