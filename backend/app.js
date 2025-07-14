@@ -16,11 +16,11 @@ const port = 3000;
 app.set("port", process.env.PORT || port);
 app.use(cors({
   origin: 'https://video-conferencing-frontend.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true, // only if you're using cookies or auth headers
 }));
-app.options('*', cors());
+app.options('*', cors()); // Handle preflight
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 app.use("/api/v1/user", userRoute);
