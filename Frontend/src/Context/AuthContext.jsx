@@ -6,6 +6,10 @@ import axios from "axios";
 export const AuthContext = React.createContext({});
 const client = axios.create({
   baseURL: "https://video-conferencing-191z-14vv46puq-shivams-projects-58d8c9fe.vercel.app/api/v1/user",
+  withCredentials: true,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 export const AuthProvider = ({ children }) => {
