@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import "../videoMeet.css";
+import { useNavigate } from "react-router-dom";
 
 const server_url = "https://videoconferencing-yvid.onrender.com";
 
@@ -40,6 +41,8 @@ function VideoMeet() {
   let [username, setUsername] = useState("");
 
   const videoRef = useRef([]);
+
+  const navigate = useNavigate();
 
   let [videos, setVideos] = useState([]);
 
@@ -448,7 +451,7 @@ function VideoMeet() {
       let tracks = localVideoref.current.srcObject.getTracks();
       tracks.forEach((track) => track.stop());
     } catch (e) {}
-    window.location.href = "/home";
+    navigate("/home");
   };
 
   let openChat = () => {
@@ -482,13 +485,13 @@ function VideoMeet() {
       {askForUsername == true ? (
         <div className="lobbyContainer">
           <div className="lobbyContainer_left">
-            <h1 className = "textLobby">
+            <h1 className="textLobby">
               Welcome to the Lobby — Get ready to connect, collaborate, and
               create!
             </h1>
             <div className="usernameAndConnect">
               <input
-              className="usernameInput"
+                className="usernameInput"
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
@@ -499,7 +502,7 @@ function VideoMeet() {
           </div>
           <div className="lobbyContainer_right">
             <video
-            className="lobbyVideo"
+              className="lobbyVideo"
               ref={localVideoref}
               autoPlay
               playsInline
