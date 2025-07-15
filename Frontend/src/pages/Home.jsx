@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import WithAuth from "../utils/WithAuth";
 import { useState, useContext } from "react";
 import "../App.css";
@@ -15,9 +15,38 @@ function Home() {
     await addToHistory(meetingCode);
     navigate(`/meeting/${meetingCode}`);
   };
+  const [menuBarRight, setMenuBarRight] = useState(false);
 
   return (
     <div className="landingPageContainer">
+      <div
+        className="menuBardiv"
+        style={menuBarRight ? { right: "0%" } : { right: "-100%" }}
+      >
+        <div className="menubarTop">
+          <h1>Menubar</h1>
+          <h3 onClick={() => setMenuBarRight(false)}>Go Back</h3>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+          <h3>
+            <Link
+              to={"/history"}
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              History
+            </Link>
+          </h3>
+
+          <h3
+            onClick={() => {
+              localStorage.removeItem("token");
+              navigate("/");
+            }}
+          >
+            LogOut
+          </h3>
+        </div>
+      </div>
       <div className="navBar">
         <h1 className="title">me_eting.</h1>
         <div className="navBar_right">
@@ -32,7 +61,7 @@ function Home() {
           <h4
             onClick={() => {
               localStorage.removeItem("token");
-              navigate("/login");
+              navigate("/");
             }}
             className="logOut"
             style={{ textDecoration: "none", color: "white" }}
@@ -40,7 +69,7 @@ function Home() {
             LogOut
           </h4>
         </div>
-        <div className="menuBar">
+        <div className="menuBar" onClick={() => setMenuBarRight(!menuBarRight)}>
           <span className="material-symbols-outlined">menu</span>
         </div>
       </div>

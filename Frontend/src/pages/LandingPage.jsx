@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "../App.css";
 import image from "../assets/videocall.webp";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,9 +11,40 @@ function LandingPage() {
     }
   });
 
+  const [menuBarRight, setMenuBarRight] = useState(false);
+
   return (
     <>
       <div className="landingPageContainer">
+        <div
+          className="menuBardiv"
+          style={menuBarRight ? { right: "0%" } : { right: "-100%" }}
+        >
+          <div className="menubarTop">
+            <h1>Menubar</h1>
+            <h3 onClick={() => setMenuBarRight(false)}>Go Back</h3>
+          </div>
+          <div style={{display:"flex", flexDirection:"column", gap:"1rem"}}>
+
+          <h3>
+            <Link
+              to={"/signup"}
+              style={{ textDecoration: "none", color: "white" }}
+              >
+              Sign up
+            </Link>
+          </h3>
+
+          <h3>
+            <Link
+              to={"/login"}
+              style={{ textDecoration: "none", color: "white" }}
+              >
+              Login
+            </Link>
+          </h3>
+              </div>
+        </div>
         <div className="navBar">
           <h1 className="title">me_eting.</h1>
           <div className="navBar_right">
@@ -34,7 +65,10 @@ function LandingPage() {
               </Link>
             </h4>
           </div>
-          <div className="menuBar">
+          <div
+            className="menuBar"
+            onClick={() => setMenuBarRight(!menuBarRight)}
+          >
             <span className="material-symbols-outlined">menu</span>
           </div>
         </div>

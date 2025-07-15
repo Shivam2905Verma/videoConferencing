@@ -15,8 +15,6 @@ const connectToSocket = (server) => {
   });
 
   io.on("connection", (socket) => {
-    console.log("User connected:", socket.id);
-
     socket.on("join-call", (path) => {
       if (!connection[path]) connection[path] = [];
       connection[path].push(socket.id);
@@ -59,8 +57,6 @@ const connectToSocket = (server) => {
             "socket-id-sender": socket.id,
           });
 
-          console.log("message", room, ":", sender, data);
-
           connection[room].forEach((userId) => {
             io.to(userId).emit("chat-message", data, sender, socket.id);
           });
@@ -92,7 +88,6 @@ const connectToSocket = (server) => {
         }
 
         delete timeOnLine[socket.id];
-        console.log("User disconnected:", socket.id);
       });
     });
   });

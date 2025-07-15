@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import "../videoMeet.css";
 import { useNavigate } from "react-router-dom";
+import server from "../utils/environment";
 
-const server_url = "https://videoconferencing-yvid.onrender.com";
+const server_url = `${server}`;
 
 var connections = {};
 const peerConfigConnections = {
@@ -513,11 +514,17 @@ function VideoMeet() {
       ) : (
         <div className="meetVideoConatiner">
           <div
-            style={showModal == true ? { right: "0%" } : { right: "-50%" }}
+            style={showModal == true ? { right: "0%" } : { right: "-100%" }}
             className="chatBox"
           >
             <div className="chatContainer">
-              <p className="chatTitle">Chat Box</p>
+              <p className="chatTitle">
+                <p>
+
+                Chat Box 
+                </p>
+                <p onClick={()=>setModal(false)}>Go back</p>
+              </p>
               <div className="messageDisplay">
                 {messages.length > 0 ? (
                   messages.map((item, index) => {

@@ -24,7 +24,6 @@ function History() {
     fetchHistory();
   }, []);
 
-  console.log(meetings);
   let formatDate = (dateString) => {
     let date = new Date(dateString);
     let day = date.getDate().toString().padStart(2, "0");
@@ -39,11 +38,11 @@ function History() {
       <div className="historyNav">
         <h1>History</h1>
         <h3 onClick={() => route("/home")} className="homeBtn">
-          <span class="material-symbols-outlined">home</span>Home
+          <span className="material-symbols-outlined">home</span>Home
         </h3>
       </div>
       <div className="historyContainer">
-        {meetings.map((item, index) => {
+        {meetings.length > 0 ? meetings.map((item, index) => {
           return (
             <div key={index} className="historyInfo">
               <p>Meeting Code: {item.meetingCode}</p>
@@ -51,7 +50,7 @@ function History() {
               <p>Date: {formatDate(item.date)}</p>
             </div>
           );
-        })}
+        }) : <></>}
       </div>
     </div>
   );

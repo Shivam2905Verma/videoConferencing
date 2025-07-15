@@ -2,10 +2,11 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import http from "http-status";
 import axios from "axios";
+import server from "../utils/environment.js";
 
 export const AuthContext = React.createContext({});
 const client = axios.create({
-  baseURL: "https://videoconferencing-yvid.onrender.com/api/v1/user",
+  baseURL: `${server}/api/v1/user`,
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",

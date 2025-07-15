@@ -11,16 +11,19 @@ dotenv.config();
 const app = express();
 const server = createServer(app);
 const io = connectToSocket(server);
-const port = 3000;
+const port = 5000;
 
-app.set("port", process.env.PORT || port);
 app.use(cors({
-  origin: 'https://videoconferencing-frontend.onrender.com',
+  origin: (origin, callback) => {
+    callback(null, origin); // reflect the request origin
+  },
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-app.options('*', cors()); // Handle preflight
+
+app.options('*', cors());
+app.set("port", process.env.PORT || port);
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 app.use("/api/v1/user", userRoute);
