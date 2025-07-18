@@ -84,7 +84,7 @@ function Home() {
               value={meetingCode}
               onChange={(e) => setMeetingCode(e.target.value)}
               type="text"
-              placeholder="Enter Meeting Code"
+              placeholder="Create or Enter Meeting Code"
             />
             <p onClick={handleJoinCall}>Join</p>
           </div>

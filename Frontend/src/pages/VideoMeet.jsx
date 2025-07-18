@@ -478,6 +478,7 @@ function VideoMeet() {
 
   let connect = () => {
     setAskForUsername(false);
+    getPermissions();
     getMedia();
   };
 
@@ -519,11 +520,8 @@ function VideoMeet() {
           >
             <div className="chatContainer">
               <p className="chatTitle">
-                <p>
-
-                Chat Box 
-                </p>
-                <p onClick={()=>setModal(false)}>Go back</p>
+                <p>Chat Box</p>
+                <p onClick={() => setModal(false)}>Go back</p>
               </p>
               <div className="messageDisplay">
                 {messages.length > 0 ? (
